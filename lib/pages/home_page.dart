@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:revery/pages/main_page.dart';
+// import 'package:responsive_builder/responsive_builder.dart';
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
@@ -48,8 +49,15 @@ class _HomePageState extends State<HomePage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MainPage()));
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (c, a1, a2) => MainPage(),
+                      transitionsBuilder: (c, anim, a2, child) =>
+                          FadeTransition(opacity: anim, child: child),
+                      transitionDuration: const Duration(milliseconds: 2000),
+                    ),
+                  );
                 },
                 child: const Text('Continue'),
                 style: ElevatedButton.styleFrom(
