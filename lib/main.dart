@@ -18,7 +18,6 @@ class ReveryApp extends StatelessWidget {
           textTheme: Theme.of(context).textTheme.apply(
                 fontFamily: 'Inter',
               )),
-      // theme: ThemeData(fontFamily: 'Inter'),
       home: HomePage(),
     );
   }

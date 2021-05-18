@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'kado_animate.dart';
 
 // ignore: use_key_in_widget_constructors
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
-      ),
-      body: const Center(
-        child: Text(
-          "Main Page of Animation",
-          style:
-              TextStyle(fontSize: 25, color: Colors.black, fontFamily: 'Inter'),
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Kado Animation',
+      theme: ThemeData(
+          primarySwatch: Colors.purple,
+          textTheme: Theme.of(context).textTheme.apply(
+                fontFamily: 'Inter',
+              )),
+      home: KadoAnimation(),
     );
   }
 }
