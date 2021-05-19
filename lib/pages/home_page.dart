@@ -19,16 +19,14 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            // ignore: prefer_const_literals_to_create_immutables
             children: <Widget>[
               const Text(
-                'FLUTTER WEB \nTHE BASICS',
+                'CUTE KADO \nFEELS DROWSY',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontWeight: FontWeight.w800,
-                    fontSize: 80,
+                    fontSize: 75,
                     height: 1.0,
-                    // color: Color(value),
                     color: Color.fromRGBO(51, 51, 51, 1),
                     fontFamily: 'Inter'),
               ),
@@ -36,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 height: 10,
               ),
               const Text(
-                'In this course we will go over the basics of using Flutter Web for website development. Topics will include Responsive Layout, Deploying, Font Changes, Hover Functionality, Modals and more.',
+                'Kado, the Koala is a symbol of your gateway to the dream world. It could help you find better sleeping patterns and habits, moreover assist you to correct your sleep schedule. Continue to find out!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 20,

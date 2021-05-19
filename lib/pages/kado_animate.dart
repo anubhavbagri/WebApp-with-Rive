@@ -25,7 +25,7 @@ class _KadoAnimationState extends State<KadoAnimation> {
       (data) async {
         final file = RiveFile.import(data);
         final artboard = file.mainArtboard;
-        artboard.addController(_controller = SimpleAnimation('Eating'));
+        artboard.addController(_controller = SimpleAnimation('Drowsy'));
         setState(() => _riveArtboard = artboard);
         setState(() => _controller!.isActive = !_controller!.isActive);
       },
