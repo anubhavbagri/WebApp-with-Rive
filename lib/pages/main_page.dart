@@ -19,7 +19,7 @@ class _MainPageState extends State<MainPage>
           textTheme: Theme.of(context).textTheme.apply(
                 fontFamily: 'Inter',
               )),
-      home: KadoAnimation(),
+      home: const KadoAnimation(),
     );
   }
 }

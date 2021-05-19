@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:rive/rive.dart';
 
 class KadoAnimation extends StatefulWidget {
@@ -11,14 +12,7 @@ class KadoAnimation extends StatefulWidget {
 }
 
 class _KadoAnimationState extends State<KadoAnimation> {
-  void _togglePlay() {
-    if (_controller == null) {
-      return;
-    }
-    setState(() => _controller!.isActive = !_controller!.isActive);
-  }
-
-  bool get isPlaying => _controller?.isActive ?? false;
+  bool status = false;
 
   Artboard? _riveArtboard;
   RiveAnimationController? _controller;
@@ -30,11 +24,18 @@ class _KadoAnimationState extends State<KadoAnimation> {
       (data) async {
         final file = RiveFile.import(data);
         final artboard = file.mainArtboard;
-
         artboard.addController(_controller = SimpleAnimation('Eating'));
         setState(() => _riveArtboard = artboard);
+        setState(() => _controller!.isActive = !_controller!.isActive);
       },
     );
+  }
+
+  void _togglePlay() {
+    if (_controller == null) {
+      return;
+    }
+    setState(() => _controller!.isActive = !_controller!.isActive);
   }
 
   @override
@@ -48,22 +49,42 @@ class _KadoAnimationState extends State<KadoAnimation> {
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 200.0),
-          child: SizedBox(
-            width: 500.0,
-            height: 500.0,
-            child: _riveArtboard == null
-                ? const SizedBox()
-                : Rive(artboard: _riveArtboard!),
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _togglePlay,
-        tooltip: isPlaying ? 'Pause' : 'Play',
-        child: Icon(
-          isPlaying ? Icons.pause : Icons.play_arrow,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(bottom: 100.0),
+              child: SizedBox(
+                width: 450.0,
+                height: 450.0,
+                child: _riveArtboard == null
+                    ? const SizedBox()
+                    : Rive(artboard: _riveArtboard!),
+              ),
+            ),
+            FlutterSwitch(
+              value: status,
+              onToggle: (val) {
+                setState(() {
+                  status = val;
+                  _togglePlay();
+                });
+              },
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            status
+                ? const Text(
+                    "Stop",
+                    style: TextStyle(
+                        fontSize: 25, color: Colors.black, fontFamily: 'Inter'),
+                  )
+                : const Text(
+                    "Start",
+                    style: TextStyle(
+                        fontSize: 25, color: Colors.black, fontFamily: 'Inter'),
+                  )
+          ],
         ),
       ),
     );
