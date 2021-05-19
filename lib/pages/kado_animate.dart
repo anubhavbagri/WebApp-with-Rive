@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:revery/pages/home_page.dart';
 import 'package:rive/rive.dart';
 
 class KadoAnimation extends StatefulWidget {
@@ -42,6 +43,13 @@ class _KadoAnimationState extends State<KadoAnimation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.push(
+            context,
+            PageRouteBuilder(pageBuilder: (_, __, ___) => HomePage()),
+          ),
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         iconTheme: const IconThemeData(
