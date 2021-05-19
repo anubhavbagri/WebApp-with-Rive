@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:revery/pages/main_page.dart';
+import 'package:revery/pages/new_animate.dart';
 
 // ignore: use_key_in_widget_constructors
 class Button2 extends StatefulWidget {
@@ -12,8 +12,8 @@ class _Button2State extends State<Button2> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => MainPage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const NewAnimation()));
       },
       child: const Text('Explore'),
       style: ElevatedButton.styleFrom(
