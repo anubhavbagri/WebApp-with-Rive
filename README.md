@@ -15,8 +15,8 @@ Have worked accordingly.
 
 ## Deliverables:
 
-- [x] [Link to GitHub repo](https://github.com/anubhavbagri/WebApp-with-Rive)
-- [x] [Link to hosted app](https://kado-koala.web.app/#/)
+- [x] [Link to GitHub Repository](https://github.com/anubhavbagri/WebApp-with-Rive)
+- [x] [Link to hosted Web app](https://kado-koala.web.app/#/)
 
 ### A few resources to get you started if this is your first Flutter project:
 
