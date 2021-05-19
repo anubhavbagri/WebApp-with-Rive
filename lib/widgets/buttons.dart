@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:revery/pages/main_page.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+
+import 'button1.dart';
+import 'button2.dart';
 
 // ignore: use_key_in_widget_constructors
 class Buttons extends StatefulWidget {
@@ -10,29 +13,29 @@ class Buttons extends StatefulWidget {
 class _ButtonsState extends State<Buttons> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          PageRouteBuilder(
-            pageBuilder: (c, a1, a2) => MainPage(),
-            transitionsBuilder: (c, anim, a2, child) =>
-                FadeTransition(opacity: anim, child: child),
-            transitionDuration: const Duration(milliseconds: 2000),
+    return ScreenTypeLayout(
+      mobile: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Button1(),
+          const SizedBox(
+            height: 30,
           ),
-        );
-      },
-      child: const Text('Continue'),
-      style: ElevatedButton.styleFrom(
-          primary: Colors.purpleAccent,
-          elevation: 10,
-          minimumSize: const Size(150, 50),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-          textStyle: const TextStyle(
-            fontSize: 18,
-            fontFamily: 'Inter',
-          )),
+          Button2(),
+        ],
+      ),
+      desktop: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Button1(),
+          const SizedBox(
+            width: 80,
+          ),
+          Button2(),
+        ],
+      ),
     );
   }
 }
