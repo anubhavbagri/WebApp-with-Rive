@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 height: 10,
               ),
               const Text(
-                'Kado, the Koala is a symbol of your gateway to the dream world. It could help you find better sleeping patterns and habits, moreover assist you to correct your sleep schedule. Continue to find out!',
+                'Kado, the Koala is a symbol of your gateway to the dream world. Immerse with him in deep slumber as sleep is the best way to improve your health. Continue to see how you could control his sleepiness!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 20,
