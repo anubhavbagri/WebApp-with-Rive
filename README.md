@@ -11,7 +11,7 @@ Have worked accordingly.
 ## Bonuses
 
 - [x] Add an intro screen that tells a story about the animation with a continue button at the bottom of the screen. When the user clicks "Continue", they should be taken to the animation screen with a fade transition.
-- [ ] Add another button on the intro screen that says "Explore". When the user clicks on this button, it should take them to another screen that shows a new Rive animation. Create a pull request to add the code for this feature to your repo, but do not merge the PR.
+- [x] Add another button on the intro screen that says "Explore". When the user clicks on this button, it should take them to another screen that shows a new Rive animation. Create a pull request to add the code for [this feature](https://github.com/anubhavbagri/WebApp-with-Rive/tree/Explore) to your repo, but do not merge the PR.
 
 ## Deliverables:
 
